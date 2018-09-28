@@ -1,0 +1,14 @@
+<input [(ngModel)]="idPukimon" [(ngModel)]="id">
+<input [(ngModel)]="id" readonly>
+
+
+<p>{{idPukimon}}</p>
+<input [(ngModel)]="filtre">
+<select [(ngModel)]="namePukimonSelected">
+	<option *ngFor="let pukimon of listPukimon | filterPokemonPipe:'name':filtre" value={{pukimon.name}}>
+		{{pukimon.id}}
+		{{pukimon.name}}
+	</option>
+</select>
+
+<p>{{namePukimonSelected}}</p>
